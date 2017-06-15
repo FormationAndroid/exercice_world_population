@@ -1,5 +1,6 @@
 package company.com.worldpopulation;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         client.get(getApplicationContext(), "http://api.population.io:80/1.0/countries", new JsonHttpResponseHandler(){
 
             @Override
-            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+            public void onSuccess(int statusCode, Header[] headers, final JSONObject response) {
                 super.onSuccess(statusCode, headers, response);
 
                 ArrayList<String> stringArray = new ArrayList<String>();
@@ -46,8 +47,9 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
-                        // CHANGER d'ACTIVITE, envoyer pays en extra
-
+                        Intent intent = new Intent(getApplicationContext(), CountryInformationActivity.class);
+                        intent.putExtra("country", response.optJSONArray("countries").optString(position));
+                        startActivity(intent);
                     }
                 });
 
