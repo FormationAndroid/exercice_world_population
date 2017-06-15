@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/WorldPopulation.iml" filepath="$PROJECT_DIR$/WorldPopulation.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/exercice_world_population.iml" filepath="$PROJECT_DIR$/exercice_world_population.iml" />
     </modules>
   </component>
 </project>
